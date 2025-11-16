@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b54t27nujkc4x"
-path="res://.godot/imported/bulbasaur.png-35adc48398829e830e646b9f389c4a60.ctex"
+uid="uid://dve30fqh8vycy"
+path="res://.godot/imported/squirtle.png-a7ff84d7e20c6613c3571f1abd09335e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/bulbasaur.png"
-dest_files=["res://.godot/imported/bulbasaur.png-35adc48398829e830e646b9f389c4a60.ctex"]
+source_file="res://assets/sprites/squirtle.png"
+dest_files=["res://.godot/imported/squirtle.png-a7ff84d7e20c6613c3571f1abd09335e.ctex"]
 
 [params]
 
