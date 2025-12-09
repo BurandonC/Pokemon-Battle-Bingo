@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://co54lfdq3f0j3"]
+
+[ext_resource type="Texture2D" uid="uid://du5pcuuxdyf0h" path="res://assets/BG/PBB-Background.png" id="1_ki6c0"]
+[ext_resource type="PackedScene" uid="uid://d2s5voyibjcw6" path="res://scenes/Card/card.tscn" id="2_8ifl6"]
+
+[sub_resource type="GDScript" id="GDScript_8ifl6"]
+script/source = "extends Node2D
+
+func _ready():
+	# Debug: Let's see what $Chip actually is
+	print(\"Type of $Chip: \", $Chip.get_class())
+	print(\"Name of $Chip: \", $Chip.name)
+	
+	# Connect to the chip's signal
+	$Chip.chip_clicked.connect(_on_chip_clicked)
+
+func _on_chip_clicked(chip):
+	print(\"Chip signal received!\")
+	chip.flip()
+"
+
+[node name="Scene" type="Node2D"]
+script = SubResource("GDScript_8ifl6")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(576.6996, 324.12497)
+scale = Vector2(0.59626037, 0.59626037)
+texture = ExtResource("1_ki6c0")
+
+[node name="Chip" parent="." instance=ExtResource("2_8ifl6")]
+position = Vector2(590, 305)
