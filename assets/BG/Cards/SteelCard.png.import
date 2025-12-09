@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://du5pcuuxdyf0h"
-path="res://.godot/imported/PBB-Background.png-492a69c8f3c9d074b28d967b770c04de.ctex"
+uid="uid://nd7b7mcosw4"
+path="res://.godot/imported/SteelCard.png-29ec3bc96f5affae6fd066555868fb9e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/BG/1x/PBB-Background.png"
-dest_files=["res://.godot/imported/PBB-Background.png-492a69c8f3c9d074b28d967b770c04de.ctex"]
+source_file="res://assets/BG/Cards/SteelCard.png"
+dest_files=["res://.godot/imported/SteelCard.png-29ec3bc96f5affae6fd066555868fb9e.ctex"]
 
 [params]
 

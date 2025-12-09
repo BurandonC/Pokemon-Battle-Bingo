@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://co54lfdq3f0j3"]
 
-[ext_resource type="Texture2D" uid="uid://du5pcuuxdyf0h" path="res://assets/BG/1x/PBB-Background.png" id="1_ki6c0"]
-[ext_resource type="PackedScene" uid="uid://d2s5voyibjcw6" path="res://scenes/Chip/Chip.tscn" id="2_8ifl6"]
+[ext_resource type="Texture2D" uid="uid://du5pcuuxdyf0h" path="res://assets/BG/PBB-Background.png" id="1_ki6c0"]
+[ext_resource type="PackedScene" uid="uid://d2s5voyibjcw6" path="res://scenes/Card/card.tscn" id="2_8ifl6"]
 
 [sub_resource type="GDScript" id="GDScript_8ifl6"]
 script/source = "extends Node2D

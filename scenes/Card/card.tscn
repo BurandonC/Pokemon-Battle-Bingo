@@ -1,15 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2s5voyibjcw6"]
+[gd_scene load_steps=9 format=3 uid="uid://d2s5voyibjcw6"]
 
-[ext_resource type="Texture2D" uid="uid://qtyppvrdob7g" path="res://assets/BG/1x/BingoChip.png" id="1_pacjk"]
-[ext_resource type="Script" uid="uid://bbvx8fyr8d4h4" path="res://scenes/Chip/chip.gd" id="1_rnlqf"]
-[ext_resource type="Texture2D" uid="uid://b54t27nujkc4x" path="res://assets/sprites/bulbasaur.png" id="2_rnlqf"]
+[ext_resource type="Script" uid="uid://bbvx8fyr8d4h4" path="res://scenes/Card/card.gd" id="1_nufwx"]
+[ext_resource type="Texture2D" uid="uid://dlvvnb244xew5" path="res://assets/BG/Cards/CardBack.png" id="2_r0nle"]
+[ext_resource type="Texture2D" uid="uid://b54t27nujkc4x" path="res://assets/sprites/bulbasaur.png" id="3_r5uov"]
+[ext_resource type="Texture2D" uid="uid://bk6cmpc3v5kjt" path="res://assets/BG/Cards/NormalCard.png" id="4_nufwx"]
 
 [sub_resource type="Animation" id="Animation_rnlqf"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ChipBack:scale")
+tracks/0/path = NodePath("CardBack:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -21,7 +22,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ChipBack:z_index")
+tracks/1/path = NodePath("CardBack:z_index")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -33,7 +34,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("ChipFront:scale")
+tracks/2/path = NodePath("CardFront:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -45,7 +46,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("ChipFront:z_index")
+tracks/3/path = NodePath("CardFront:z_index")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -60,7 +61,7 @@ resource_name = "token_flip"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ChipBack:scale")
+tracks/0/path = NodePath("CardBack:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -72,7 +73,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ChipBack:z_index")
+tracks/1/path = NodePath("CardBack:z_index")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -84,7 +85,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("ChipFront:scale")
+tracks/2/path = NodePath("CardFront:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -96,7 +97,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("ChipFront:z_index")
+tracks/3/path = NodePath("CardFront:z_index")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -112,21 +113,22 @@ _data = {
 &"token_flip": SubResource("Animation_pacjk")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kls7e"]
-radius = 196.9
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boq2l"]
+size = Vector2(168, 168)
 
-[node name="Chip" type="Node2D"]
-script = ExtResource("1_rnlqf")
+[node name="card" type="Node2D"]
+script = ExtResource("1_nufwx")
 
-[node name="ChipFront" type="Sprite2D" parent="."]
-texture = ExtResource("1_pacjk")
+[node name="CardFront" type="Sprite2D" parent="."]
+texture = ExtResource("2_r0nle")
 
-[node name="Sprite" type="Sprite2D" parent="ChipFront"]
-scale = Vector2(3.575, 3.575)
-texture = ExtResource("2_rnlqf")
+[node name="Sprite" type="Sprite2D" parent="CardFront"]
+position = Vector2(4.295454, -10.5)
+scale = Vector2(1.9588068, 1.9588063)
+texture = ExtResource("3_r5uov")
 
-[node name="ChipBack" type="Sprite2D" parent="."]
-texture = ExtResource("1_pacjk")
+[node name="CardBack" type="Sprite2D" parent="."]
+texture = ExtResource("4_nufwx")
 
 [node name="flip" type="AnimationPlayer" parent="."]
 libraries = {
@@ -136,6 +138,7 @@ libraries = {
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_kls7e")
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_boq2l")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
